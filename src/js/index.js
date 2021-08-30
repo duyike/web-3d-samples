@@ -1,1 +1,1 @@
-console.log("start...");
+// just a entry file, do nothing

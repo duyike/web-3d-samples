@@ -1,17 +1,14 @@
 const CopyWebpackPlugin = require("copy-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
-const MiniCSSExtractPlugin = require("mini-css-extract-plugin");
 const path = require("path");
-const { config } = require("process");
 
-const pages = ["index", "three-js-starting"];
+const pages = ["index", "three-js-starting", "flag", "cloth"];
 
 module.exports = {
   entry: pages.reduce((config, page) => {
     config[page] = path.resolve(__dirname, `../src/js/${page}.js`);
     return config;
   }, {}),
-  //   entry: path.resolve(__dirname, "../src/js/index.js"),
   output: {
     filename: "bundle.[contenthash].js",
     path: path.resolve(__dirname, "../dist"),
@@ -21,11 +18,6 @@ module.exports = {
     new CopyWebpackPlugin({
       patterns: [{ from: path.resolve(__dirname, "../static") }],
     }),
-    // new HtmlWebpackPlugin({
-    //   template: path.resolve(__dirname, "../src/html/index.html"),
-    //   minify: true,
-    // }),
-    new MiniCSSExtractPlugin(),
   ].concat(
     pages.map(
       (page) =>
@@ -52,13 +44,6 @@ module.exports = {
         exclude: /node_modules/,
         use: ["babel-loader"],
       },
-
-      // CSS
-      {
-        test: /\.css$/,
-        use: [MiniCSSExtractPlugin.loader, "css-loader"],
-      },
-
       // Images
       {
         test: /\.(jpg|png|gif|svg)$/,
