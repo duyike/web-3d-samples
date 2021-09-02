@@ -2,7 +2,7 @@ const CopyWebpackPlugin = require("copy-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const path = require("path");
 
-const pages = ["index", "flag"];
+const pages = ["index", "flag", "aframe-starter", "ball-control"];
 
 module.exports = {
   entry: pages.reduce((config, page) => {
