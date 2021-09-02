@@ -1,4 +1,4 @@
-/* global AFRAME, THREE, Ammo */
+/* global AFRAME, Ammo */
 
 AFRAME.registerComponent("shaking", {
   schema: {},

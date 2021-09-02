@@ -1,6 +1,6 @@
 const { merge } = require("webpack-merge");
 const commonConfiguration = require("./webpack.common.js");
-const ip = require("internal-ip");
+// const ip = require("internal-ip");
 const portFinderSync = require("portfinder-sync");
 
 const infoColor = (_message) => {
@@ -22,7 +22,7 @@ module.exports = merge(commonConfiguration, {
     disableHostCheck: true,
     overlay: true,
     noInfo: true,
-    after: function (app, server, compiler) {
+    after: function (app, server) {
       const port = server.options.port;
       const https = server.options.https ? "s" : "";
       const domain = `http${https}://${host}:${port}`;
