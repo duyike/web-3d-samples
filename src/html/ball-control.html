@@ -25,16 +25,15 @@
         id="ball"
         radius="0.02"
         color="yellow"
-        position="0 1.6 -0.4"
+        position="0 1.0 -0.4"
         ammo-body="type: dynamic;"
         ammo-shape="type: sphere"
-        shaking
       ></a-sphere>
       <a-entity
-        id="racket"
+        id="paddle"
         geometry="primitive: box; height: 0.01; width: 0.3; depth: 0.3"
         material="color: red"
-        position="0 1.4 -0.4"
+        position="0 0.8 -0.4"
         ammo-body="type: kinematic;"
         ammo-shape="type: box"
       >
@@ -42,7 +41,7 @@
 
       <a-entity
         hand-controls="hand: right; handModelStyle: lowPoly"
-        aabb-collider="objects: #racket"
+        aabb-collider="objects: #paddle"
         aabb-grab
       ></a-entity>
       <a-entity

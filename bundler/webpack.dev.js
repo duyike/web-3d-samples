@@ -7,8 +7,8 @@ const infoColor = (_message) => {
   return `\u001b[1m\u001b[34m${_message}\u001b[39m\u001b[22m`;
 };
 
-const host = "0.0.0.0";
-// const host = "localhost";
+// const host = "0.0.0.0";
+const host = "localhost";
 
 module.exports = merge(commonConfiguration, {
   mode: "development",
