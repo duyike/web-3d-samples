@@ -44,19 +44,6 @@ module.exports = {
         exclude: /node_modules/,
         use: ["babel-loader"],
       },
-      // Images
-      {
-        test: /\.(jpg|png|gif|svg)$/,
-        use: [
-          {
-            loader: "file-loader",
-            options: {
-              outputPath: "assets/images/",
-            },
-          },
-        ],
-      },
-
       // Fonts
       {
         test: /\.(ttf|eot|woff|woff2)$/,
